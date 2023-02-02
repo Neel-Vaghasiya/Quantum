@@ -1,0 +1,352 @@
+@font-face {
+  font-family: quicksand-bold;
+  src: url(/Quicksand_font/static/Quicksand-Bold.ttf);
+}
+@font-face {
+  font-family: quicksand-light;
+  src: url(../Quicksand_font/static/Quicksand-Light.ttf);
+}
+@font-face {
+  font-family: quicksand-medium;
+  src: url(../Quicksand_font/static/Quicksand-Medium.ttf);
+}
+@font-face {
+  font-family: quicksand-regular;
+  src: url(../Quicksand_font/static/Quicksand-Regular.ttf);
+}
+@font-face {
+  font-family: quicksand-semibold;
+  src: url(../Quicksand_font/static/Quicksand-SemiBold.ttf);
+}
+html, body {
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: quicksand-semibold;
+}
+html .header, body .header {
+  width: auto;
+  height: 56px;
+  opacity: 80%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../image/header_pattern.png");
+  opacity: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+  border-bottom: 2px solid #31B9E4;
+  font-family: quicksand-bold;
+  padding-right: 24px;
+  padding-left: 24px;
+}
+html .header .logo, body .header .logo {
+  display: flex;
+  align-items: center;
+}
+html .header .nav-items, body .header .nav-items {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  height: 100%;
+}
+html .header #dashboard, body .header #dashboard {
+  color: #FFFFFF;
+  font-size: 14px;
+  border-bottom: 4px solid #FFFFFF;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding-bottom: 15px;
+  padding-top: 19px;
+  align-self: center;
+}
+html .header li, body .header li {
+  color: #3FD28B;
+  margin-left: 32px;
+  font-size: 14px;
+  opacity: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+html .header li .alert, body .header li .alert {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+html .header li .alert .badge-number, body .header li .alert .badge-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-size: 12px;
+  width: 17px;
+  height: 17px;
+  background-color: #2A7FF3;
+  border-radius: 50%;
+  position: absolute;
+  top: 0px;
+  right: 0;
+}
+html .header li .alert-badge-icon, body .header li .alert-badge-icon {
+  width: 28px;
+  height: 33px;
+}
+html .header li .announcement-badge-icon, body .header li .announcement-badge-icon {
+  width: 31px;
+  height: 33px;
+}
+html .header li .user-badge-icon, body .header li .user-badge-icon {
+  width: 35px;
+  height: 37px;
+}
+html .header li .user-badge-icon #user, body .header li .user-badge-icon #user {
+  width: 28px;
+  height: 28px;
+  border: 2px solid #3FD28B;
+  border-radius: 50%;
+}
+html .header li .user-badge-icon .badge-text, body .header li .user-badge-icon .badge-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  width: 16px;
+  height: 16px;
+  background-color: #FFFFFF;
+  color: #222222;
+  border-radius: 50%;
+  position: absolute;
+  top: 0px;
+  right: 0;
+}
+html .header #hamburger, body .header #hamburger {
+  display: none;
+}
+html .container, body .container {
+  width: auto;
+  height: 100%;
+  background-color: #EEEEEE;
+  padding: 24px 24px 33px 24px;
+}
+html .container .overview, body .container .overview {
+  background-color: #8DDC97;
+  height: 64px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  margin-bottom: 24px;
+  border-radius: 2px;
+}
+html .container .overview .courses, body .container .overview .courses {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+html .container .overview .courses .overview-span, body .container .overview .courses .overview-span {
+  font-family: quicksand-bold;
+  font-size: 24px;
+  margin-left: 10px;
+  margin-right: 6px;
+}
+html .container .overview .course, body .container .overview .course {
+  width: 100%;
+  height: 60px;
+  margin-top: auto;
+  border-bottom: 4px solid #222222;
+}
+html .container .courses-heading, body .container .courses-heading {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  padding-bottom: 17px;
+}
+html .container .courses-heading .num, body .container .courses-heading .num {
+  color: #686868;
+  font-size: 12px;
+  align-self: flex-end;
+}
+html .container .courses-heading .sort, body .container .courses-heading .sort {
+  display: flex;
+  align-items: center;
+  color: #686868;
+  font-size: 12px;
+}
+html .container .courses-heading .sort .select, body .container .courses-heading .sort .select {
+  width: 166px;
+  border: none;
+  background-color: #EEEEEE;
+  font-family: quicksand-semibold;
+  font-size: 16px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  color: #222222;
+  background-image: url("../image/icons/arrow-down.svg");
+  background-repeat: no-repeat;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  background-position: right 0px center;
+  margin-left: 6px;
+  padding-bottom: 4px;
+  margin-right: 24px;
+}
+html .container .courses-heading .sort .no-outline:focus, body .container .courses-heading .sort .no-outline:focus {
+  outline: none;
+}
+html .container .main-content, body .container .main-content {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(475px, 1fr));
+  grid-gap: 25px 24px;
+}
+html .container .main-content .content1, body .container .main-content .content1 {
+  background-color: #FFFFFF;
+  padding: 24px 16px 0px 24px;
+  font-size: 12px;
+  color: #666666;
+}
+html .container .main-content .content1 .description, body .container .main-content .content1 .description {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+html .container .main-content .content1 .description .course-text, body .container .main-content .content1 .description .course-text {
+  width: 100%;
+  margin-left: 16px;
+}
+html .container .main-content .content1 .description .course-text .title, body .container .main-content .content1 .description .course-text .title {
+  color: #222222;
+  font-size: 16px;
+  font-family: quicksand-bold;
+  margin-bottom: 7px;
+}
+html .container .main-content .content1 .description .course-text .sub-grade, body .container .main-content .content1 .description .course-text .sub-grade {
+  margin-bottom: 7px;
+}
+html .container .main-content .content1 .description .course-text .sub-grade .subject, body .container .main-content .content1 .description .course-text .sub-grade .subject {
+  border-right: 1px solid rgba(0, 0, 0, 0.12);
+  padding-right: 9px;
+  margin-right: 8px;
+}
+html .container .main-content .content1 .description .course-text .sub-grade .min, body .container .main-content .content1 .description .course-text .sub-grade .min {
+  color: #1F7A54;
+}
+html .container .main-content .content1 .description .course-text .size, body .container .main-content .content1 .description .course-text .size {
+  margin-bottom: 16px;
+}
+html .container .main-content .content1 .description .course-text .size .size-num, body .container .main-content .content1 .description .course-text .size .size-num {
+  color: black;
+  font-family: quicksand-bold;
+}
+html .container .main-content .content1 .description .course-text .div-select, body .container .main-content .content1 .description .course-text .div-select {
+  width: 100%;
+  border: none;
+  background-color: #FFFFFF;
+  font-family: quicksand-semibold;
+  font-size: 16px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  color: #222222;
+  background-image: url("../image/icons/arrow-down.svg");
+  background-repeat: no-repeat;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  background-position: right center;
+  padding-bottom: 4px;
+  margin-bottom: 8px;
+}
+html .container .main-content .content1 .description .course-text .no-outline:focus, body .container .main-content .content1 .description .course-text .no-outline:focus {
+  outline: none;
+}
+html .container .main-content .content1 .description .unfavourite, body .container .main-content .content1 .description .unfavourite {
+  filter: brightness(10%);
+  opacity: 10%;
+}
+html .container .main-content .content1 .horizontle-border, body .container .main-content .content1 .horizontle-border {
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  margin-right: 8px;
+}
+html .container .main-content .content1 .icons, body .container .main-content .content1 .icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+  margin: 18px 32px 9px 24px;
+}
+html .container .main-content .expired-content, body .container .main-content .expired-content {
+  position: relative;
+}
+html .container .main-content .expired-content .expired-badge, body .container .main-content .expired-content .expired-badge {
+  font-family: quicksand-bold;
+  padding: 4px 7px 2px 5px;
+  font-size: 10px;
+  background-color: #FFE4E6;
+  color: #D80000;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+html .footer, body .footer {
+  background-color: #EEEEEE;
+}
+html .footer .bottom-nav, body .footer .bottom-nav {
+  text-align: center;
+  color: #1F7A54;
+  font-size: 14px;
+}
+html .footer .bottom-nav .bottom-nav-items, body .footer .bottom-nav .bottom-nav-items {
+  border-right: 1px solid rgba(0, 0, 0, 0.12);
+  padding-right: 8px;
+  margin-right: 10px;
+}
+html .footer .copyright, body .footer .copyright {
+  color: #616161;
+  background-color: #E0E1E1;
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+}
+html .footer .copyright .footer-logo, body .footer .copyright .footer-logo {
+  border-right: 1px solid rgba(0, 0, 0, 0.12);
+  padding-right: 16px;
+  margin-right: 16px;
+}
+html .footer .copyright .footer-text span, body .footer .copyright .footer-text span {
+  font-family: quicksand-bold;
+}
+
+@media (max-width: 880px) {
+  body .header .big {
+    display: none;
+  }
+  body .header #hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  body .header {
+    min-width: 480px;
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+  body .container {
+    min-width: 480px;
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+  body .footer {
+    min-width: 480px;
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+}/*# sourceMappingURL=dashboard.css.map */

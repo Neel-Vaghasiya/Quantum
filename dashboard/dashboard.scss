@@ -1,0 +1,378 @@
+
+@import "../style";
+
+html, body {
+    height:max-content;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: quicksand-semibold;
+
+    .header {
+        @include boxSize(auto, 56px);
+        opacity: 80%;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+                           rgba(0, 0, 0, 0.5)), url("../image/header_pattern.png");
+        opacity: 100%;
+        @include flexCenter();
+        justify-content: space-between;
+        border-bottom: 2px solid $borderBottomColor;
+        font-family: quicksand-bold;
+        padding-right: 24px;
+        padding-left: 24px;
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-items {
+            list-style-type: none;
+            @include flexCenter();
+            margin-top: 0;
+            margin-bottom: 0;
+            height: 100%;
+        }
+
+        #dashboard {
+            color: $whiteColor;
+            font-size: 14px;
+            border-bottom: 4px solid $whiteColor;
+            height:fit-content;
+            padding-bottom: 15px;
+            padding-top: 19px;
+            align-self: center;
+        }
+        
+
+        li {
+            
+            color: $buttonBackgroundColor;
+            margin-left: 32px;
+            font-size: 14px;
+            opacity: 100%;
+            @include flexCenter();
+            height: 100%;
+
+            .alert {
+                display: flex;
+                align-items: center;
+                
+                position: relative;
+
+                .badge-number {
+                    @include flexCenter();
+                    color: $whiteColor;
+                    font-size: 12px;
+                    @include boxSize(17px, 17px);
+                    background-color: $badgeColor;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 0px;
+                    right: 0;
+                }
+            }
+            
+            .alert-badge-icon {
+                @include boxSize(28px, 33px);
+            }
+
+            .announcement-badge-icon {
+                @include boxSize(31px, 33px);
+            }
+
+            .user-badge-icon {
+                @include boxSize(35px, 37px);
+
+                #user {
+                    @include boxSize(28px, 28px);
+                    border: 2px solid $buttonBackgroundColor;
+                    border-radius: 50%;
+                }
+
+                .badge-text {
+                    @include flexCenter();
+                    font-size: 10px;
+                    @include boxSize(16px, 16px);
+                    background-color: $whiteColor;
+                    color: $darkFont;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 0px;
+                    right: 0;
+                }
+            }
+        }
+
+        #hamburger {
+    
+            display: none;
+        }
+
+    }
+
+    .container {
+        @include boxSize(auto, 100%);
+        background-color: $backgroundColor;
+        padding: 24px 24px 33px 24px;
+
+        .overview {
+            background-color: $overviewBackgroundColor;
+            height: 64px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            justify-items: center;
+            align-items: center;
+            margin-bottom: 24px;
+            border-radius: 2px;
+
+            .courses {
+                @include flexCenter();
+
+                .overview-span {
+                    font-family: quicksand-bold;
+                    font-size: 24px;
+                    margin-left: 10px;
+                    margin-right: 6px;
+                }
+            }
+
+            .course {
+                @include boxSize(100%, 60px);
+                margin-top: auto;
+                border-bottom: 4px solid $darkFont;
+            }
+
+        }
+
+        .courses-heading {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: $lightBorder;
+            padding-bottom: 17px;
+
+            .num {
+                color: #686868;
+                font-size: 12px;
+                align-self: flex-end;
+            }
+
+            .sort {
+                display: flex;
+                align-items: center;
+                color: #686868;
+                font-size: 12px;
+
+                .select {
+                    width: 166px;
+                    border: none;
+                    background-color: $backgroundColor;
+                    font-family: quicksand-semibold;
+                    font-size: 16px;
+                    appearance: none;
+                    color: $darkFont;
+                    background-image: url("../image/icons/arrow-down.svg");
+                    background-repeat: no-repeat;
+                    border-bottom: $lightBorder;
+                    background-position: right 0px center;
+                    margin-left: 6px;
+                    padding-bottom: 4px;
+                    margin-right: 24px;
+                }
+                
+                .no-outline:focus {
+                    outline: none;
+                }
+            }
+            
+        }
+
+        .main-content {
+            margin-top: 16px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(475px, 1fr));
+            grid-gap: 25px 24px;
+
+            .content1 {
+                background-color: $whiteColor;
+                padding: 24px 16px 0px 24px;
+                font-size: 12px;
+                color: $lightFont;
+
+                .description {
+                    display: flex;
+                    align-items: flex-start;
+                    margin-bottom: 18px;
+
+                    .course-text {
+                        width: 100%;
+                        margin-left:16px;
+
+                        .title {
+                            color: $darkFont;
+                            font-size: 16px;    
+                            font-family: quicksand-bold;
+                            margin-bottom: 7px;
+                        }
+
+                        .sub-grade {
+                            margin-bottom: 7px;
+
+                            .subject {
+                                border-right: $lightBorder;
+                                padding-right: 9px;
+                                margin-right: 8px;
+                            }
+
+                            .min {
+                                color: $greenText;
+                            }
+                        }
+
+                        .size {
+                            margin-bottom: 16px;
+
+                            .size-num {
+                                color: black;
+                                font-family: quicksand-bold;
+                            }
+                        }
+
+                        .div-select {
+                            width: 100%;
+                            border: none;
+                            background-color: $whiteColor;
+                            font-family: quicksand-semibold;
+                            font-size: 16px;
+                            appearance: none;
+                            color: $darkFont;
+                            background-image: url("../image/icons/arrow-down.svg");
+                            background-repeat: no-repeat;
+                            border-bottom: $lightBorder;
+                            background-position: right center;
+                            padding-bottom: 4px;
+                            margin-bottom: 8px;
+                        }
+
+                        .no-outline:focus {
+                            outline: none;
+                        }
+                    }
+
+                    .unfavourite {
+                        filter: brightness(10%);
+                        opacity: 10%;
+                    }
+                }
+
+                .horizontle-border {
+                    border-top: $lightBorder;
+                    margin-right: 8px;
+                }
+
+                .icons {
+                    @include flexCenter();
+                    justify-content: space-between;
+                    margin: 18px 32px 9px 24px;
+                    
+                }
+            }
+
+            .expired-content {
+                position: relative;
+
+                .expired-badge {
+                    font-family: quicksand-bold;
+                    padding: 4px 7px 2px 5px;
+                    font-size: 10px;
+                    background-color: $expiredBackgroundColor;
+                    color: $expiredFontColor;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+            }
+            
+        }
+
+    }
+
+    .footer {
+        background-color: $backgroundColor;
+
+        .bottom-nav {
+            text-align: center;
+            color: $greenText;
+            font-size: 14px;
+
+            .bottom-nav-items {
+                border-right: $lightBorder;
+                padding-right: 8px;
+                margin-right: 10px;
+            }
+        }
+
+        .copyright {
+            color: $footerTextColor;
+            background-color: $footerBackgroundColor;
+            margin-top: 16px;
+            @include flexCenter();
+            height: 40px;
+
+            .footer-logo {
+                border-right: $lightBorder;
+                padding-right: 16px;
+                margin-right: 16px;
+            }
+
+            .footer-text {
+                span {
+                    font-family: quicksand-bold;
+                }
+            }
+        }
+    }
+}
+
+
+
+@media (max-width: 880px) {
+    body {
+
+        .header {
+            .big {
+                display: none;
+            }
+        }
+    }
+    body {
+        .header {
+            #hamburger {
+                @include flexCenter();
+            }
+        }
+    }
+    body {
+        .header{
+            min-width: 480px;
+            padding-right: 24px;
+            padding-left: 24px;
+        }
+    }
+    body {
+        .container{
+            min-width: 480px;
+            padding-right: 24px;
+            padding-left: 24px;
+            
+        }
+    }
+    body {
+        .footer {
+            
+            min-width: 480px;
+            padding-right: 24px;
+            padding-left: 24px;
+        }
+    }
+} 

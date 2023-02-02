@@ -1,0 +1,55 @@
+
+@mixin flexCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin font($size, $weight) {
+    font-size: $size;
+    font-weight: $weight;
+}
+
+@mixin boxSize($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+$lightBorder: 1px solid rgb(0, 0, 0, 0.120);
+$darkFont: #222222;
+$semiDarkFont: #333333;
+$lightFont: #666666;
+$borderBottomColor: #31B9E4;
+$backgroundColor: #EEEEEE;
+$formBackgroundColor: #FFFFFF;
+$buttonBackgroundColor: #3FD28B;
+$buttonTextColor: #1F2834;
+$greenText: #1F7A54;
+$footerTextColor: #616161;
+$footerBackgroundColor: #E0E1E1;
+$whiteColor: #FFFFFF;
+$badgeColor: #2A7FF3;
+$overviewBackgroundColor: #8DDC97;
+$expiredBackgroundColor: #FFE4E6;
+$expiredFontColor: #D80000;
+
+@font-face {
+    font-family: quicksand-bold;
+    src: url(/Quicksand_font/static/Quicksand-Bold.ttf);
+}
+@font-face {
+    font-family: quicksand-light;
+    src: url(../Quicksand_font/static/Quicksand-Light.ttf);
+}
+@font-face {
+    font-family: quicksand-medium;
+    src: url(../Quicksand_font/static/Quicksand-Medium.ttf);
+}
+@font-face {
+    font-family: quicksand-regular;
+    src: url(../Quicksand_font/static/Quicksand-Regular.ttf);
+}
+@font-face {
+    font-family: quicksand-semibold;
+    src: url(../Quicksand_font/static/Quicksand-SemiBold.ttf);
+}
