@@ -23,7 +23,6 @@
   src: url(../Quicksand_font/Quicksand-Variable.ttf);
 }
 html, body {
-  height: 100%;
   width: 100%;
 }
 
@@ -51,15 +50,16 @@ body .section {
   justify-content: center;
   flex-direction: column;
   background-color: #EEEEEE;
-}
-body .section .container {
-  width: 488px;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+}
+body .section .container {
+  width: 488px;
   margin-top: 50px;
   background-color: #FFFFFF;
   border-top: 4px solid #31B9E4;
+  margin-bottom: 32px;
 }
 body .section .container .form {
   margin: 20px 32px 24px 32px;
@@ -197,14 +197,13 @@ body .section .container .form .label {
   color: #666666;
   opacity: 1;
 }
-body .section .bottom-nav {
+body .bottom-nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 32px;
   background-color: #EEEEEE;
 }
-body .section .bottom-nav .link {
+body .bottom-nav .link {
   font-size: 14px;
   font-weight: bold;
   text-align: center;
@@ -213,7 +212,7 @@ body .section .bottom-nav .link {
   opacity: 1;
   margin-bottom: 16px;
 }
-body .section .bottom-nav .about {
+body .bottom-nav .about {
   border-right: 1px solid rgba(0, 0, 0, 0.12);
   margin-right: 10px;
   padding-right: 8px;
