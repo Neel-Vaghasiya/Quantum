@@ -134,12 +134,23 @@ html .header #hamburger, body .header #hamburger {
   display: none;
 }
 html .container, body .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: auto;
   height: 100%;
   background-color: #EEEEEE;
   padding: 24px 24px 33px 24px;
 }
+html .container .section, body .container .section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 html .container .overview, body .container .overview {
+  width: 100%;
   background-color: #8DDC97;
   height: 64px;
   display: grid;
@@ -167,6 +178,7 @@ html .container .overview .course, body .container .overview .course {
   border-bottom: 4px solid #222222;
 }
 html .container .courses-heading, body .container .courses-heading {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
@@ -205,6 +217,7 @@ html .container .courses-heading .sort .no-outline:focus, body .container .cours
   outline: none;
 }
 html .container .main-content, body .container .main-content {
+  width: 100%;
   margin-top: 16px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(475px, 1fr));
@@ -241,6 +254,11 @@ html .container .main-content .content1 .description .course-text .sub-grade .su
 }
 html .container .main-content .content1 .description .course-text .sub-grade .min, body .container .main-content .content1 .description .course-text .sub-grade .min {
   color: #1F7A54;
+}
+html .container .main-content .content1 .description .course-text .cap-dur .duration, body .container .main-content .content1 .description .course-text .cap-dur .duration {
+  border-left: 1px solid rgba(0, 0, 0, 0.12);
+  margin-left: 8px;
+  padding-left: 8px;
 }
 html .container .main-content .content1 .description .course-text .size, body .container .main-content .content1 .description .course-text .size {
   margin-bottom: 16px;
@@ -283,6 +301,9 @@ html .container .main-content .content1 .icons, body .container .main-content .c
   justify-content: center;
   justify-content: space-between;
   margin: 18px 32px 9px 24px;
+}
+html .container .main-content .content1 .icons .unavailable-icon, body .container .main-content .content1 .icons .unavailable-icon {
+  opacity: 50%;
 }
 html .container .main-content .content1 .icons button, body .container .main-content .content1 .icons button {
   background-color: #FFFFFF;
@@ -336,6 +357,26 @@ html .footer .copyright .footer-text span, body .footer .copyright .footer-text 
   font-family: quicksand-bold;
 }
 
+@media (max-width: 1040px) {
+  .main-content {
+    max-width: 700px;
+  }
+}
+@media (min-width: 1125px) {
+  .main-content {
+    max-width: 1200px;
+  }
+}
+@media (min-width: 1540px) {
+  .main-content {
+    max-width: 1850px;
+  }
+}
+@media (min-width: 2100px) {
+  .main-content {
+    max-width: 100%;
+  }
+}
 @media (max-width: 880px) {
   body .header .big {
     display: none;

@@ -115,11 +115,24 @@ html, body {
     }
 
     .container {
+        
+        @include flexCenter();
+
+        .section {
+            width: 100%;
+            @include flexCenter();
+            flex-direction: column;
+            // text-align: center;
+
+        }
+        
+        
         @include boxSize(auto, 100%);
         background-color: $backgroundColor;
         padding: 24px 24px 33px 24px;
 
         .overview {
+            width: 100%;
             background-color: $overviewBackgroundColor;
             height: 64px;
             display: grid;
@@ -149,6 +162,7 @@ html, body {
         }
 
         .courses-heading {
+            width: 100%;
             display: flex;
             justify-content: space-between;
             border-bottom: $lightBorder;
@@ -191,12 +205,15 @@ html, body {
         }
 
         .main-content {
+            width: 100%;
             margin-top: 16px;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(475px, 1fr));
+            
             grid-gap: 25px 24px;
 
             .content1 {
+                // max-width: 600px;
                 background-color: $whiteColor;
                 padding: 24px 16px 0px 24px;
                 font-size: 12px;
@@ -230,6 +247,15 @@ html, body {
                             .min {
                                 color: $greenText;
                             }
+                        }
+                        .cap-dur {
+
+                            .duration {
+                                border-left: $lightBorder;
+                                margin-left: 8px;
+                                padding-left: 8px;
+                            }
+                            
                         }
 
                         .size {
@@ -274,6 +300,10 @@ html, body {
                 }
 
                 .icons {
+                    .unavailable-icon {
+                        // filter: brightness(10%);
+                        opacity: 50%;
+                    }
                     button {
                         background-color: $formBackgroundColor;
                         border: none;
@@ -346,9 +376,36 @@ html, body {
     }
 }
 
+@media (max-width: 1040px) {
 
+    .main-content {
+        max-width: 700px;
+    }
+}
+
+@media (min-width: 1125px) {
+
+    .main-content {
+        max-width: 1200px;
+    }
+}
+
+@media (min-width: 1540px) {
+
+    .main-content {
+        max-width: 1850px;
+    }
+}
+
+@media (min-width: 2100px) {
+
+    .main-content {
+        max-width: 100%;
+    }
+}
 
 @media (max-width: 880px) {
+    
     body {
 
         .header {
