@@ -46,13 +46,16 @@ html, body {
         
 
         li {
-            
-            color: $buttonBackgroundColor;
             margin-left: 32px;
             font-size: 14px;
             opacity: 100%;
             @include flexCenter();
             height: 100%;
+
+            a {
+                color: $buttonBackgroundColor;
+                text-decoration: none;
+            }
 
             .alert {
                 display: flex;
@@ -271,6 +274,11 @@ html, body {
                 }
 
                 .icons {
+                    button {
+                        background-color: $formBackgroundColor;
+                        border: none;
+                        cursor: pointer;
+                    }
                     @include flexCenter();
                     justify-content: space-between;
                     margin: 18px 32px 9px 24px;
@@ -302,8 +310,12 @@ html, body {
 
         .bottom-nav {
             text-align: center;
-            color: $greenText;
             font-size: 14px;
+
+            a {
+                color: $greenText;
+                text-decoration: none;
+            }
 
             .bottom-nav-items {
                 border-right: $lightBorder;

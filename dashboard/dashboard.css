@@ -67,7 +67,6 @@ html .header #dashboard, body .header #dashboard {
   align-self: center;
 }
 html .header li, body .header li {
-  color: #3FD28B;
   margin-left: 32px;
   font-size: 14px;
   opacity: 100%;
@@ -75,6 +74,10 @@ html .header li, body .header li {
   align-items: center;
   justify-content: center;
   height: 100%;
+}
+html .header li a, body .header li a {
+  color: #3FD28B;
+  text-decoration: none;
 }
 html .header li .alert, body .header li .alert {
   display: flex;
@@ -281,6 +284,11 @@ html .container .main-content .content1 .icons, body .container .main-content .c
   justify-content: space-between;
   margin: 18px 32px 9px 24px;
 }
+html .container .main-content .content1 .icons button, body .container .main-content .content1 .icons button {
+  background-color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+}
 html .container .main-content .expired-content, body .container .main-content .expired-content {
   position: relative;
 }
@@ -299,8 +307,11 @@ html .footer, body .footer {
 }
 html .footer .bottom-nav, body .footer .bottom-nav {
   text-align: center;
-  color: #1F7A54;
   font-size: 14px;
+}
+html .footer .bottom-nav a, body .footer .bottom-nav a {
+  color: #1F7A54;
+  text-decoration: none;
 }
 html .footer .bottom-nav .bottom-nav-items, body .footer .bottom-nav .bottom-nav-items {
   border-right: 1px solid rgba(0, 0, 0, 0.12);

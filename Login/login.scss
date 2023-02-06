@@ -230,9 +230,7 @@ body {
     .footer {
         height: 40px;
         background-color: $footerBackgroundColor;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flexCenter();
 
         .footer-text {
             border-left: $lightBorder;
