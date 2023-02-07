@@ -1,21 +1,25 @@
 
-const main_content = document.getElementsByClassName("main-content")[0];
-const courses_count = document.getElementById("courses-span");
-const classes_count = document.getElementById("classes-span");
-const num = document.getElementsByClassName("num")[0];
+import { DataObject, CoursesObject } from "./interfaces";
+
+const main_content : HTMLDivElement = document.getElementsByClassName("main-content")[0] as HTMLDivElement;
+const courses_count : HTMLSpanElement = document.getElementById("courses-span") as HTMLSpanElement;
+const classes_count : HTMLSpanElement = document.getElementById("classes-span") as HTMLSpanElement;
+const num : HTMLDivElement = document.getElementsByClassName("num")[0] as HTMLDivElement;
 
 async function getData() {
     const response = await fetch("../data/data.json");
-    const data = await response.json();
-    const courses = data.courses;
+    const data : DataObject = await response.json();
+   
+    const courses : CoursesObject[] = data.courses;
 
-    courses_count.innerText = courses.length;
+    courses_count.innerText = courses.length.toString();
+    classes_count.innerText = data.total_classes.toString();
     num.innerText = `Showing ${courses.length} of ${courses.length} courses`;
 
-    function classes_string(course) {
-        const classes = course.classes;
-        let classes_str = ``;
-        let j=0;
+    function classes_string(course: CoursesObject) : string {
+        const classes : string[] = course.classes;
+        let classes_str : string = ``;
+        let j : number = 0;
         if(!classes.length) {
             classes_str += `<option selected>No Classes</option>`;
             return classes_str;
@@ -111,13 +115,13 @@ async function getData() {
             `;
 
         let star_elements = document.getElementsByClassName("star");
-        let star_element = star_elements[star_elements.length - 1];
+        let star_element : HTMLDivElement = star_elements[star_elements.length - 1] as HTMLDivElement;
         let contents = document.getElementsByClassName("content1");
-        let content = contents[contents.length - 1];
+        let content : HTMLDivElement = contents[contents.length - 1] as HTMLDivElement;
         let manage_courses = document.getElementsByClassName("manage_course");
-        let manage_course = manage_courses[manage_courses.length-1];
+        let manage_course : HTMLImageElement = manage_courses[manage_courses.length-1] as HTMLImageElement;
         let grade_submissions = document.getElementsByClassName("grade_submission");
-        let grade_submission = grade_submissions[grade_submissions.length-1];
+        let grade_submission : HTMLImageElement = grade_submissions[grade_submissions.length-1] as HTMLImageElement;
       
         if(!course.is_manage_course) {
             manage_course.classList.add("unavailable-icon");
@@ -135,5 +139,5 @@ async function getData() {
 }
 
 
-getData()
-
+getData();
+export {};
