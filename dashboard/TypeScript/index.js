@@ -135,4 +135,87 @@ function getData() {
     });
 }
 getData();
+const hamburger_list = document.getElementById("hamburger-list");
+const verticle_navbar = document.getElementById("verticle-navbar");
+const hamburger_items = document.getElementsByClassName("hamburger-item");
+const alert_list = document.getElementById("alert-list");
+const announcement_list = document.getElementById("announcement-list");
+const alert_div = document.getElementsByClassName("alert-div")[0];
+const announcement_div = document.getElementsByClassName("announcement-div")[0];
+const alert_icon_to_white = document.getElementById("alert-icon-to-white");
+const announcement_icon_to_white = document.getElementById("announcement-icon-to-white");
+const alert_number_badge = document.getElementById("alert-number-badge");
+const announcement_number_badge = document.getElementById("announcement-number-badge");
+let isin = false;
+hamburger_list.addEventListener("mouseenter", () => {
+    alert_icon_to_white.style.filter = "brightness(0) invert(1)";
+    verticle_navbar.style.display = "inline-block";
+    console.log("mouse in");
+    isin = true;
+});
+hamburger_list.addEventListener("mouseleave", () => {
+    isin = false;
+    console.log("mouseleave");
+    if (verticle_navbar.style.display === "inline-block") {
+        console.log("mouseleave");
+        setTimeout(() => {
+            if (!isin) {
+                verticle_navbar.style.display = "none";
+                alert_icon_to_white.style.filter = "none";
+            }
+        }, 300);
+    }
+});
+let isinalert = false;
+alert_list.addEventListener("mouseenter", () => {
+    alert_icon_to_white.style.filter = "brightness(0) invert(1)";
+    alert_div.style.display = "block";
+    alert_number_badge.style.display = "none";
+    console.log("mouse in");
+    isinalert = true;
+});
+alert_list.addEventListener("mouseleave", () => {
+    isinalert = false;
+    console.log("mouseleave");
+    if (alert_div.style.display === "block") {
+        console.log("mouseleave");
+        setTimeout(() => {
+            if (!isinalert) {
+                alert_div.style.display = "none";
+                alert_icon_to_white.style.filter = "none";
+                alert_number_badge.style.display = "flex";
+            }
+        }, 100);
+    }
+});
+let isinannouncement = false;
+announcement_list.addEventListener("mouseenter", () => {
+    announcement_icon_to_white.style.filter = "brightness(0) invert(1)";
+    announcement_div.style.display = "block";
+    announcement_number_badge.style.display = "none";
+    console.log("mouse in");
+    isinannouncement = true;
+});
+announcement_list.addEventListener("mouseleave", () => {
+    isinannouncement = false;
+    console.log("mouseleave");
+    if (announcement_div.style.display === "block") {
+        console.log("mouseleave");
+        setTimeout(() => {
+            if (!isinannouncement) {
+                announcement_div.style.display = "none";
+                announcement_icon_to_white.style.filter = "none";
+                announcement_number_badge.style.display = "flex";
+            }
+        }, 100);
+    }
+});
+for (let item of Array.from(hamburger_items)) {
+    item.addEventListener("click", () => {
+        for (let i of Array.from(hamburger_items)) {
+            i.classList.remove("selected");
+        }
+        item.classList.add("selected");
+    });
+}
 export {};

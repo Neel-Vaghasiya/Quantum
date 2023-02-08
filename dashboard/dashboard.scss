@@ -2,21 +2,48 @@
 @import "../style";
 
 html, body {
+    // position:absolute;
+    // top:0;
+    // left:0;
+    width:100%;
     height:max-content;
-    width: 100%;
+    // min-width:480px;
     margin: 0;
     padding: 0;
     font-family: quicksand-semibold;
 
+    
+
     .header {
+
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+          
+        ::-webkit-scrollbar-track {
+            background: inherit; 
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: rgba(0, 0, 0, 0.38); 
+            border-radius: 6px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 0, 0, 0.501); 
+
+        }
+
+        position: relative;
+
         @include boxSize(auto, 56px);
         opacity: 80%;
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5),
-                           rgba(0, 0, 0, 0.5)), url("../image/header_pattern.png");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7),
+                           rgba(0, 0, 0, 0.7)), url("../image/header_pattern.png");
         opacity: 100%;
         @include flexCenter();
         justify-content: space-between;
-        border-bottom: 2px solid $borderBottomColor;
+        border-bottom: 2.4px solid $borderBottomColor;
         font-family: quicksand-bold;
         padding-right: 24px;
         padding-left: 24px;
@@ -32,6 +59,471 @@ html, body {
             margin-top: 0;
             margin-bottom: 0;
             height: 100%;
+
+            li {
+                margin-left: 32px;
+                font-size: 14px;
+                opacity: 100%;
+                @include flexCenter();
+                height: 100%;
+    
+                a {
+                    color: $buttonBackgroundColor;
+                    text-decoration: none;
+
+                    
+                }
+
+                .alert-anchor {
+                    color: $darkFont;
+                    text-decoration: none;
+                    padding: 0;
+
+
+
+                    div {
+                        .alert-div {
+                            display: none;
+                            
+                            z-index: 2;
+                            position: absolute;
+                            
+                            @include boxSize(315px, auto);
+                            
+                            top: 44.5px;
+                            right: -11px;
+                            
+                            
+                            // border: 2px solid black;
+                            border-radius: 2px;
+                            box-shadow: 0px 3px 6px #00000029;
+                            background-color: #FFFFEE;
+                            font-family: quicksand-semibold;
+                            overflow-y:hidden;
+            
+                            ul {
+                                // border: 2px solid black;
+                                max-height: 534px;
+                                overflow-y: overlay;
+                                
+                                
+                                padding: 0;
+                                li {
+                                    margin: 0;
+                                    padding: 12px 16px;
+                                    display: block;
+                                    border-bottom: 1px solid #2222221F;
+                                    div {
+                                        div {
+                                            
+                                            // .is-shown-icon {
+                                            //     background-image: url("../image/icons/checkbox-checked.svg");
+                                            //     background-size: 21px;
+                                                
+                                            //     background-position: center;
+                                            //     width: 16px;
+                                            //     height: 16px;
+                                            //     background-repeat: no-repeat;
+                                            //     border-radius: 50%;
+                                                
+                                            // }
+                                            .is-shown-icon {
+                                                background-image: url("../image/icons/dash-circle.svg");
+                                                background-size: 16px;
+                                                filter: invert(35%) sepia(7%) saturate(6227%) hue-rotate(107deg) brightness(96%) contrast(76%);
+                                                
+                                                // background-position: center;
+                                                width: 16px;
+                                                height: 16px;
+                                                background-repeat: no-repeat;
+                                                border-radius: 50%;
+                                            }
+                                        }
+                                        .line {
+                                            padding: 4px 0px;
+                                        }
+                                        .line1 {
+                                            display: flex;
+                                            justify-content: space-between;
+                                            font-size: 14px;
+                                            color: $darkFont;
+                                        }
+                                        .line2 {
+                                            font-size: 12px;
+                                            span {
+                                                color: #6E6E6E;
+                                            }
+                                        }
+                                        .line3 {
+                                            display: flex;
+                                            justify-content: flex-end;
+                                            font-size: 12px;
+                                            font-family: quicksand-medium;
+                                            color: #6E6E6E;
+                                            
+                                        }
+                                    }
+                                }
+            
+                                .alert-seen {
+                                    background-color: $whiteColor;
+
+                                    .is-shown-icon {
+                                            background-image: url("../image/icons/checkbox-checked.svg");
+                                            background-size: 21px;
+                                            filter: none;
+                                            background-position: center;
+                                            width: 16px;
+                                            height: 16px;
+                                            background-repeat: no-repeat;
+                                            border-radius: 50%;
+                                            
+                                        }
+                                    
+                                }
+            
+                            }
+
+                            .alert-subdiv {
+                                border-radius: 8px;
+                                position: relative;
+                                padding-bottom: 48px;
+                                
+
+                                .alert-buttons {
+                                    
+                                    padding: 9px 0px;
+                                    position: absolute;
+                                    bottom:0px;
+                                    left: 0;
+                                    height: 30px;
+                                    width: 100%;
+                                    background-color: $whiteColor;
+                                    box-shadow: 0px 1px 6px #0000003D;
+
+                                    button {
+                                        width: 100%;
+                                        height: 100%;
+                                        border: none;
+                                        background-color: inherit;
+                                        color: $greenText;
+                                        font-size: 14px;
+                                        font-family: quicksand-semibold;
+                                        cursor: pointer;
+                                    }
+
+                                }
+                            }
+                        }
+                    }
+                }
+                .announcement-anchor {
+                    color: $darkFont;
+                    text-decoration: none;
+                    padding: 0;
+
+
+                    div {
+                        .announcement-div {
+                            display: none;
+                            z-index: 2;
+                            position: absolute;
+                            
+                            @include boxSize(315px, auto);
+                            
+                            top: 44.5px;
+                            right: -11px;
+                            
+                            
+                            // border: 2px solid black;
+                            border-radius: 2px;
+                            box-shadow: 0px 3px 6px #00000029;
+                            background-color: #FFFFEE;
+                            font-family: quicksand-semibold;
+                            overflow-y:hidden;
+            
+                            ul {
+                                // border: 2px solid black;
+                                max-height: 534px;
+                                overflow-y: overlay;
+                                
+                                
+                                padding: 0;
+                                li {
+                                    margin: 0;
+                                    padding: 12px 16px;
+                                    display: block;
+                                    border-bottom: 1px solid #2222221F;
+                                    div {
+                                        div {
+                                            
+                                            
+                                            .is-shown-icon {
+                                                background-image: url("../image/icons/dash-circle.svg");
+                                                background-size: 16px;
+                                                filter: invert(35%) sepia(7%) saturate(6227%) hue-rotate(107deg) brightness(96%) contrast(76%);
+                                                
+                                                // background-position: center;
+                                                width: 16px;
+                                                height: 16px;
+                                                background-repeat: no-repeat;
+                                                border-radius: 50%;
+                                            }
+                                        }
+                                        .line {
+                                            padding: 4px 0px;
+                                        }
+                                        .line1 {
+                                            display: flex;
+                                            justify-content: space-between;
+                                            .from {
+                                                font-size: 12px;
+                                                color: #6E6E6E;
+                                                span {
+                                                    color: $darkFont;
+                                                }
+                                            }
+                                        }
+                                        .line2 {
+                                            // font-family: quicksand-bold;
+                                            display: block;
+                                            font-size: 14px;
+                                            div {
+                                                justify-self: flex-start;
+                                            }
+                                            
+                                        }
+                                        .line3 {
+                                            font-size: 12px;
+                                            color: #6E6E6E;
+                                            height: 15px;
+                                        }
+                                        .line4 {
+                                            display: flex;
+                                            justify-content: space-between;
+                                            font-size: 12px;
+                                            font-family: quicksand-medium;
+                                            color: #6E6E6E;
+                                            .attach {
+                                                display: flex;
+                                                overflow: hidden;
+                                                position: relative;
+                                                height: 15px;
+                                                align-items: center;
+                                                img {
+                                                    height: 100%;
+                                                    text-align: center;
+                                                    position: absolute;
+                                                    left: -5px;
+                                                }
+                                                span {
+                                                    margin-left: 10px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+            
+                                .announcement-seen {
+                                    background-color: $whiteColor;
+
+                                    .is-shown-icon {
+                                        background-image: url("../image/icons/checkbox-checked.svg");
+                                        background-size: 21px;
+                                        filter: none;
+                                        background-position: center;
+                                        width: 16px;
+                                        height: 16px;
+                                        background-repeat: no-repeat;
+                                        border-radius: 50%;
+                                        
+                                    }
+                                    
+                                }
+            
+                            }
+
+                            .announcement-subdiv {
+                                border-radius: 8px;
+                                position: relative;
+                                padding-bottom: 48px;
+                                
+
+                                .announcement-buttons {
+                                    
+                                    padding: 9px 0px;
+                                    position: absolute;
+                                    bottom:0px;
+                                    left: 0;
+                                    height: 30px;
+                                    width: 100%;
+                                    background-color: $whiteColor;
+                                    box-shadow: 0px 1px 6px #0000003D;
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+
+                                    button {
+                                        width: 100%;
+                                        height: 100%;
+                                        border: none;
+                                        background-color: inherit;
+                                        color: $greenText;
+                                        font-size: 14px;
+                                        font-family: quicksand-semibold;
+                                        cursor: pointer;
+                                    }
+
+                                    .verticle-border {
+                                        height: 100%;
+                                        border: 1px solid #0000001F;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+    
+                .alert {
+                    display: flex;
+                    align-items: center;
+                    
+                    position: relative;
+    
+                    .badge-number {
+                        @include flexCenter();
+                        color: $whiteColor;
+                        font-size: 12px;
+                        @include boxSize(17px, 17px);
+                        background-color: $badgeColor;
+                        border-radius: 50%;
+                        position: absolute;
+                        top: 0px;
+                        right: 0;
+                    }
+                }
+                
+                .alert-badge-icon {
+                    @include boxSize(28px, 33px);
+                }
+    
+                .announcement-badge-icon {
+                    @include boxSize(31px, 33px);
+                }
+    
+                .user-badge-icon {
+                    @include boxSize(35px, 37px);
+    
+                    #user {
+                        @include boxSize(28px, 28px);
+                        border: 2px solid $buttonBackgroundColor;
+                        border-radius: 50%;
+                    }
+    
+                    .badge-text {
+                        @include flexCenter();
+                        font-size: 10px;
+                        @include boxSize(16px, 16px);
+                        background-color: $whiteColor;
+                        color: $darkFont;
+                        border-radius: 50%;
+                        position: absolute;
+                        top: 0px;
+                        right: 0;
+                    }
+                }
+
+            }
+
+            
+
+            #hamburger-list {
+                display: none;
+                // display: inline-block;
+                cursor: pointer;
+                // position: relative;
+
+                .verticle-nav {
+                    // height: 288px;
+                    width: 280px;
+                    box-shadow: 0px 13px 20px #0000003D;
+                    background-color: $whiteColor;
+                    z-index: 2;
+                    position:absolute;
+                    top: 59px;
+                    right: 16px;   
+                    display: none; 
+                    border-radius: 2px;
+        
+                    ul {
+                        padding: 0;
+                        margin: 0;
+                        list-style: none;
+                        li {
+                            margin: 0;
+                            display: block;
+                            // height: 18px;
+                            padding: 15px 24px 15px 16px;
+                            div {
+                                a {
+                                    font-size: 14px;
+                                    color: $greenText;
+                                    text-decoration: none;
+                                }
+                            }
+                            ul {
+                                display: none;
+                            }
+                        }
+                        .selected {
+                            background-color: #F3F3F3;
+                            // height: 66px;
+                            padding-bottom: 0;
+                            div {
+                                padding-bottom: 15px;
+                                div {
+                                    transform: rotate(180deg);
+                                }
+                            }
+                            ul {
+                                padding: 0;
+                                margin: 0;
+                                display: block;
+
+                                li {
+                                    margin: 0;
+                                    display: block;
+                                    height: 18px;
+                                    padding: 15px 24px 15px 16px;
+                                    a {
+                                        font-size: 14px;
+                                        color: $greenText;
+                                        text-decoration: none;
+                                    }
+                                }
+                            }
+                        }
+                        .hamburger-item { 
+                            div {
+                                display: flex;
+                                justify-content: space-between;
+                                div {
+                                    // display: block;
+                                    // transform: rotate(180deg);
+                                    padding: 0;
+                                    width: 12px;
+                                    height: 12px;
+                                    background-image: url("../image/icons/down-arrow.svg");
+                                    background-size: 12px;
+                                    background-position: top right;
+                                    background-repeat: no-repeat;
+                                    filter: invert(42%) sepia(8%) saturate(2891%) hue-rotate(103deg) brightness(91%) contrast(100%);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         #dashboard {
@@ -43,76 +535,8 @@ html, body {
             padding-top: 19px;
             align-self: center;
         }
-        
-
-        li {
-            margin-left: 32px;
-            font-size: 14px;
-            opacity: 100%;
-            @include flexCenter();
-            height: 100%;
-
-            a {
-                color: $buttonBackgroundColor;
-                text-decoration: none;
-            }
-
-            .alert {
-                display: flex;
-                align-items: center;
-                
-                position: relative;
-
-                .badge-number {
-                    @include flexCenter();
-                    color: $whiteColor;
-                    font-size: 12px;
-                    @include boxSize(17px, 17px);
-                    background-color: $badgeColor;
-                    border-radius: 50%;
-                    position: absolute;
-                    top: 0px;
-                    right: 0;
-                }
-            }
-            
-            .alert-badge-icon {
-                @include boxSize(28px, 33px);
-            }
-
-            .announcement-badge-icon {
-                @include boxSize(31px, 33px);
-            }
-
-            .user-badge-icon {
-                @include boxSize(35px, 37px);
-
-                #user {
-                    @include boxSize(28px, 28px);
-                    border: 2px solid $buttonBackgroundColor;
-                    border-radius: 50%;
-                }
-
-                .badge-text {
-                    @include flexCenter();
-                    font-size: 10px;
-                    @include boxSize(16px, 16px);
-                    background-color: $whiteColor;
-                    color: $darkFont;
-                    border-radius: 50%;
-                    position: absolute;
-                    top: 0px;
-                    right: 0;
-                }
-            }
-        }
-
-        #hamburger {
-    
-            display: none;
-        }
-
     }
+
 
     .container {
         
@@ -337,6 +761,7 @@ html, body {
 
     .footer {
         background-color: $backgroundColor;
+        
 
         .bottom-nav {
             text-align: center;
@@ -355,6 +780,8 @@ html, body {
         }
 
         .copyright {
+            padding-left: 24px;
+            padding-right: 24px;
             color: $footerTextColor;
             background-color: $footerBackgroundColor;
             margin-top: 16px;
@@ -409,39 +836,50 @@ html, body {
     body {
 
         .header {
-            .big {
-                display: none;
+            .nav-items {
+                .big {
+                    display: none;
+                }
             }
         }
     }
     body {
         .header {
-            #hamburger {
-                @include flexCenter();
+            .nav-items {
+                #hamburger-list {
+                    // @include flexCenter();
+                    // display: flex;
+                    display: flex;
+
+                }
             }
         }
     }
     body {
         .header{
             min-width: 480px;
-            padding-right: 24px;
-            padding-left: 24px;
+            // min-width: 100%;
+            // padding-right: 24px;
+            // padding-left: 24px;
+
         }
     }
     body {
         .container{
             min-width: 480px;
-            padding-right: 24px;
-            padding-left: 24px;
+            // min-width: 100%;
+            // padding-right: 24px;
+            // padding-left: 24px;
             
         }
     }
     body {
         .footer {
             
-            min-width: 480px;
-            padding-right: 24px;
-            padding-left: 24px;
+            min-width: 528px;
+            // width: 100%;
+            // padding-right: 24px;
+            // padding-left: 24px;
         }
     }
 } 
