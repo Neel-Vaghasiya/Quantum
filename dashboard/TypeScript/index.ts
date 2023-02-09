@@ -142,7 +142,7 @@ async function getData() {
 getData();
 
 const hamburger_list = document.getElementById("hamburger-list");
-const verticle_navbar = document.getElementById("verticle-navbar");
+const verticle_nav : HTMLDivElement = document.getElementsByClassName("verticle-nav")[0] as HTMLDivElement;
 const hamburger_items = document.getElementsByClassName("hamburger-item");
 const alert_list = document.getElementById("alert-list");
 const announcement_list = document.getElementById("announcement-list");
@@ -157,8 +157,8 @@ const announcement_number_badge = document.getElementById("announcement-number-b
 let isin = false;
 
 hamburger_list.addEventListener("mouseenter", ()=> {
-    alert_icon_to_white.style.filter = "brightness(0) invert(1)";
-    verticle_navbar.style.display = "inline-block";
+    // verticle_navbar.style.display = "inline-block";
+    verticle_nav.setAttribute("id", "verticle-navbar");
     
     console.log("mouse in");
     isin = true;
@@ -167,11 +167,13 @@ hamburger_list.addEventListener("mouseenter", ()=> {
 hamburger_list.addEventListener("mouseleave", ()=> {
     isin = false;
     console.log("mouseleave");
-    if(verticle_navbar.style.display === "inline-block") {
+    if(verticle_nav.hasAttribute("id")) {
         console.log("mouseleave");
         setTimeout(()=>{
             if(!isin) {
-                verticle_navbar.style.display = "none";
+                // verticle_navbar.style.display = "none";
+                // verticle_navbar.style.visibility = "hidden";
+                verticle_nav.removeAttribute("id");
                 alert_icon_to_white.style.filter = "none";
             }
         },300)
@@ -182,7 +184,9 @@ hamburger_list.addEventListener("mouseleave", ()=> {
 let isinalert = false;
 alert_list.addEventListener("mouseenter", ()=> {
     alert_icon_to_white.style.filter = "brightness(0) invert(1)";
-    alert_div.style.display = "block";
+    // alert_div.style.display = "block";
+    // alert_div.style.visibility = "visible";
+    alert_div.setAttribute("id", "alert-div-hover");
     alert_number_badge.style.display = "none";
     console.log("mouse in");
     isinalert = true;
@@ -191,11 +195,13 @@ alert_list.addEventListener("mouseenter", ()=> {
 alert_list.addEventListener("mouseleave", ()=> {
     isinalert = false;
     console.log("mouseleave");
-    if(alert_div.style.display === "block") {
+    if(alert_div.hasAttribute("id")) {
         console.log("mouseleave");
         setTimeout(()=>{
             if(!isinalert) {
-                alert_div.style.display = "none";
+                // alert_div.style.display = "none";
+                // alert_div.style.visibility = "hidden";
+                alert_div.removeAttribute("id");
                 alert_icon_to_white.style.filter = "none";
                 alert_number_badge.style.display = "flex";
             }
@@ -206,7 +212,8 @@ alert_list.addEventListener("mouseleave", ()=> {
 let isinannouncement = false;
 announcement_list.addEventListener("mouseenter", ()=> {
     announcement_icon_to_white.style.filter = "brightness(0) invert(1)";
-    announcement_div.style.display = "block";
+    // announcement_div.style.display = "block";
+    announcement_div.setAttribute("id", "announcement-div-hover");
     announcement_number_badge.style.display = "none";
     console.log("mouse in");
     isinannouncement = true;
@@ -215,11 +222,13 @@ announcement_list.addEventListener("mouseenter", ()=> {
 announcement_list.addEventListener("mouseleave", ()=> {
     isinannouncement = false;
     console.log("mouseleave");
-    if(announcement_div.style.display === "block") {
+    if(announcement_div.hasAttribute("id")) {
         console.log("mouseleave");
         setTimeout(()=>{
             if(!isinannouncement) {
-                announcement_div.style.display = "none";
+                // announcement_div.style.display = "none";
+                // announcement_div.style.visibility = "hidden";
+                announcement_div.removeAttribute("id");
                 announcement_icon_to_white.style.filter = "none";
                 announcement_number_badge.style.display = "flex";
 

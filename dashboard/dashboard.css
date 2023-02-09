@@ -20,7 +20,6 @@
 }
 html, body {
   width: 100%;
-  height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
   margin: 0;
@@ -87,10 +86,19 @@ html .header .nav-items li .alert-anchor, body .header .nav-items li .alert-anch
   text-decoration: none;
   padding: 0;
 }
+html .header .nav-items li .alert-anchor div #alert-div-hover, body .header .nav-items li .alert-anchor div #alert-div-hover {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0s, 0s, 0.1s;
+}
 html .header .nav-items li .alert-anchor div .alert-div, body .header .nav-items li .alert-anchor div .alert-div {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
   z-index: 2;
   position: absolute;
+  transform: translateY(-3em);
+  transition: all 0.3s ease 0s, visibility 0s linear 0.05s, z-index 0.3s linear 0.01s;
   width: 315px;
   height: auto;
   top: 44.5px;
@@ -186,10 +194,19 @@ html .header .nav-items li .announcement-anchor, body .header .nav-items li .ann
   text-decoration: none;
   padding: 0;
 }
+html .header .nav-items li .announcement-anchor div #announcement-div-hover, body .header .nav-items li .announcement-anchor div #announcement-div-hover {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0s, 0s, 0.1s;
+}
 html .header .nav-items li .announcement-anchor div .announcement-div, body .header .nav-items li .announcement-anchor div .announcement-div {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
   z-index: 2;
   position: absolute;
+  transform: translateY(-3em);
+  transition: all 0.3s ease 0s, visibility 0s linear 0.05s, z-index 0.3s linear 0.01s;
   width: 315px;
   height: auto;
   top: 44.5px;
@@ -369,15 +386,24 @@ html .header .nav-items #hamburger-list, body .header .nav-items #hamburger-list
   display: none;
   cursor: pointer;
 }
+html .header .nav-items #hamburger-list #verticle-navbar, body .header .nav-items #hamburger-list #verticle-navbar {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0s, 0s, 0.1s;
+}
 html .header .nav-items #hamburger-list .verticle-nav, body .header .nav-items #hamburger-list .verticle-nav {
+  visibility: hidden;
+  opacity: 0;
+  z-index: 2;
+  position: absolute;
+  transform: translateY(-3em);
+  transition: all 0.3s ease 0s, visibility 0s linear 0.05s, z-index 0.3s linear 0.01s;
   width: 280px;
   box-shadow: 0px 13px 20px rgba(0, 0, 0, 0.2392156863);
   background-color: #FFFFFF;
-  z-index: 2;
-  position: absolute;
   top: 59px;
   right: 16px;
-  display: none;
   border-radius: 2px;
 }
 html .header .nav-items #hamburger-list .verticle-nav ul, body .header .nav-items #hamburger-list .verticle-nav ul {
@@ -442,7 +468,6 @@ html .header #dashboard, body .header #dashboard {
   color: #FFFFFF;
   font-size: 14px;
   border-bottom: 4px solid #FFFFFF;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   padding-bottom: 15px;
